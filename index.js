@@ -1,23 +1,30 @@
-function getComputerChoice () {
-    const choiceArray = ['Rock', 'Paper', 'Scissors'];
-    return choiceArray[Math.floor(Math.random() * choiceArray.length)];
+function getComputerChoice() {
+  let choices = ['rock', 'paper', 'scissors'];
+  let choice = choices[Math.floor(Math.random() * choices.length)];
+  return choice;
 }
 
-function gameStart (playerSelection, computerSelection){
+const playerChoice = prompt('Pick A Weapon!').toLowerCase();
+const computerChoice = getComputerChoice();
+const score = 0;
 
-    if (playerSelection === "rock" && computerSelection === "Paper") {
-        console.log("You lose! Paper beats rock!");
-      } 
-      else if (playerSelection === "rock" && computerSelection === "Scissors") {
-        console.log("You Win! Rock beats scissors!");
-      } 
-      else if
-      (playerSelection === "rock" && computerSelection ==="Rock"){
-        console.log("It's a tie! Nobody wins.")
-      }
-    }
-
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-
-gameStart(playerSelection, computerSelection);
+ function gameStart(playerChoice, computerChoice){
+  if (playerChoice === computerChoice){
+    alert(`It's a tie!`);
+  }
+  else if (playerChoice === 'rock' && computerChoice === 'paper'){
+    alert('You lose! Too bad :/')
+  }
+  else if (playerChoice === 'scissors' && computerChoice === 'rock'){
+    alert('You lose! Too bad :/')
+  }
+  else if (playerChoice === 'paper' && computerChoice === 'scissors'){
+    alert('You lose! Too bad :/')
+  }
+  else { 
+    alert('You win! Nice job :)')
+  }
+ }
+ 
+gameStart(playerChoice, computerChoice)
+ 
