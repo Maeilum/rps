@@ -13,14 +13,21 @@ function gameStart(playerChoice, computerChoice){
     Victor = null;
   }
   else if (
+    playerChoice !== 'rock' ||
+    playerChoice !== 'paper' ||
+    playerChoice !== 'scissors') {
+      alert('Did you type the name of your weapon correctly?')
+      Victor = null
+    }
+  else if (
     playerChoice === 'rock' && computerChoice === 'paper' ||
     playerChoice === 'paper' && computerChoice === 'scissors' ||
     playerChoice === 'scissors' && computerChoice === 'rock') {
-    Victor = false;
-    alert('You lose!')
+      Victor = false;
+      alert('You lose!')
   } else {
-    Victor = true;
-    alert('You Win!')
+      Victor = true;
+      alert('You Win!')
   } 
 }
 function game(){
